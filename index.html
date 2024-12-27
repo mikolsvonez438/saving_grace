@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Series Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        video {
+            width: 100%;
+        }
+
+        .playlist {
+            margin-top: 20px;
+        }
+
+        .playlist-item {
+            cursor: pointer;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #f0f0f0;
+        }
+
+        .playlist-item:hover {
+            background-color: #e0e0e0;
+        }
+
+        .active {
+            background-color: #d0d0d0;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .episode-buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="video-container">
+        <div class="video-container">
+            <iframe id="ve-iframe" src="https://pmh.13l.link/embed/series?tmdb=5480631&sea=1&epi=1" width="100%"
+                height="100%" allowfullscreen frameborder="0"></iframe>
+        </div>
+
+        <select onchange="changeEpisode(this.value)">
+            <option value="1">Episode 1</option>
+            <option value="2">Episode 2</option>
+            <option value="3">Episode 3</option>
+            <option value="4">Episode 4</option>
+            <option value="5">Episode 5</option>
+            <option value="6">Episode 6</option>
+            <option value="7">Episode 7</option>
+            <option value="8">Episode 8</option>
+            <option value="9">Episode 9</option>
+            <option value="10">Episode 10</option>
+        </select>
+    </div>
+
+    <script>
+        function changeEpisode(episodeNum) {
+            document.getElementById('ve-iframe').src = `https://pmh.13l.link/embed/series?tmdb=5480631&sea=1&epi=${episodeNum}`;
+        }
+    </script>
+</body>
+
+</html>
